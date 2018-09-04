@@ -48,9 +48,32 @@
 
     <div class="markdown-body main">
         <h1>Programming 12</h1>
-<h2>ayyy</h2>
-<p>If you don't already have the latest JDK installed, <a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html">go get it and install it</a>.</p>
-<p>Download and install <a href="https://www.bluej.org/">BlueJ</a> and <a href="https://www.jetbrains.com/idea/download/">IntelliJ IDEA</a>.</p>
+<h2>Assignment 1</h2>
+<h3>Arrays as Parameters</h3>
+<p>Read <a href="http://www.programmedlessons.org/Java9/chap63/ch63_01.html">Chapter 63</a>.</p>
+<p>Alternate (deprecated, last updated 2006, use the newer source unless you need this for some reason) source: <a href="https://repositories.abbyvirtual.com/avsCloud/PUBLIC/Grade12Courses/Java12/CS151/Notes/chap48/ch48_1.html">Chapter 48</a>.</p>
+<p>We've looked at creating functions that take in some parameter/argument and do some thing with that parameter, like so:</p>
+<pre><code class="language-java">public void Greet(String name) {
+    System.out.println(&quot;Greetings, &quot; + name);
+}
+</code></pre>
+<p>We can do this:</p>
+<pre><code class="language-java">String username = &quot;Chris&quot;;
+Greet(username);
+</code></pre>
+<p>and the output will be what we expect: &quot;Greetings, Chris&quot;.</p>
+<p>You can pass arrays as parameters as well:</p>
+<pre><code class="language-java">public void GreetParty(String[] names) {
+    for (int i = 0; i &lt; names.length; i++) {
+        System.out.print(&quot;Greetings, &quot; + names[i]);
+    }
+}
+
+String[] characterNames = { &quot;Grug&quot;, &quot;Legolas&quot;, &quot;Illidan&quot; };
+
+GreetParty(characterNames);
+</code></pre>
+<p>For this assignment, read and run each of the variations of the ArrayDemo code in the Assignment 1 folder. Add the submission date to the first variation as a comment.</p>
 
     </div>
 
