@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Programming 12</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="github-markdown.css">
+    <link rel="stylesheet" href="highlight.min.css">
+    <link rel="stylesheet" href="katex.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+        }
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                overflow-x: scroll;
+                padding: 15px;
+                padding-left: 44px;
+                border: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidenav">
+        <a href="index.html">0</a>
+        <a href="Prog12-1.html">1</a>
+        <a href="Prog12-2.html">2</a>
+        <a href="Prog12-3.html">3</a>
+        <a href="Prog12-4.html">4</a>
+        <a href="Prog12-5.html">5</a>
+        <a href="Prog12-6.html">6</a>
+        <a href="Prog12-7.html">7</a>
+        <a href="Prog12-8.html">8</a>
+        <a href="Prog12-9.html">9</a>
+        <a href="Prog12-10.html">10</a>
+        <a href="Prog12-11.html">11</a>
+        <a href="Prog12-12.html">12</a>
+
+    </div>
+
+    <div class="markdown-body main">
+        <h1>Programming 12</h1>
+<h2>Assignment 6</h2>
+<p>Yea this one won't be fun. Inside the .txt file in the Assignment 6 folder, write what each program does.</p>
+<h3>arrayequals.java</h3>
+<pre><code class="language-java">import java.util.*;
+
+public class arrayequals {
+    public static void main(String[] args) {
+        int[] x = { 1, 2, 3, 4 };
+        int[] y = { 1, 2, 3, 4 };
+        int[] z = { 1, 2, 3 };
+
+        if (Arrays.equals(x, y)) {
+            System.out.println(&quot; x equals y&quot;);
+        } else {
+            System.out.println(&quot;x does not equal y&quot;);
+        }
+
+        if (Arrays.equals(x, z)) {
+            System.out.println(&quot; x equals z&quot;);
+        } else {
+            System.out.println(&quot;x does not equal z&quot;);
+        }
+    }
+}
+</code></pre>
+<h3>arrayinitialize.java</h3>
+<pre><code class="language-java">public class arrayinitialize {
+    public static void main(String[] args) {
+        int[] smallprimes = { 2, 3, 5, 7, 11, 13 };
+        int i;
+        for (i = 0; i &lt; smallprimes.length; i++) {
+            System.out.println(&quot;smallprimes[&quot; + i + &quot;]=&quot; + smallprimes[i]);
+        }
+    }
+}
+</code></pre>
+<h3>arrayinitialize2.java</h3>
+<pre><code class="language-java">public class arrayinitialize2 {
+    public static void main(String[] args) {
+        int[] smallprimes = new int[3];
+        smallprimes[0] = 2;
+        smallprimes[1] = 3;
+        smallprimes[2] = 5;
+
+        int i;
+        for (i = 0; i &lt; smallprimes.length; i++) {
+            System.out.println(&quot;smallprimes[&quot; + i + &quot;]=&quot; + smallprimes[i]);
+        }
+    }
+}
+</code></pre>
+<h3>arraysort.java</h3>
+<pre><code class="language-java">import java.util.*;
+
+public class arraysort {
+    public static void main(String[] args) {
+        int[] numbers = { 12, 1, 4, 2 };
+        Arrays.sort(numbers);
+        int i;
+        for (i = 0; i &lt; numbers.length; i++) {
+            System.out.println(&quot;numbers[&quot; + i + &quot;]=&quot; + numbers[i]);
+        }
+    }
+}
+</code></pre>
+<h3>breakoutwhilenested.java</h3>
+<pre><code class="language-java">public class breakoutwhilenested {
+    public static void main(String[] args) {
+        int x = 1, y;
+
+        breakhere: while (x &lt; 5) {
+            System.out.println(&quot;x=&quot; + x);
+            x = x + 1;
+            y = 1;
+            while (y &lt; 100) {
+                if (y &gt; 3) {
+                    break breakhere;
+                }
+                System.out.println(&quot;y=&quot; + y);
+                y = y + 1;
+
+            }
+        }
+    }
+}
+</code></pre>
+<h3>bufferedreaderinput.java</h3>
+<pre><code class="language-java">import java.io.*;
+
+public class bufferedreaderinput {
+    public static void main(String[] args) throws IOException {
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+
+        String name, last;
+        int number;
+        System.out.println(&quot;what is your name ?&quot;);
+        name = in.readLine();
+        System.out.println(name + &quot; what day of the month is it today?&quot;);
+        number = Integer.parseInt(in.readLine());
+        number++;
+        System.out.println(name + &quot; you know that tomorrow it will be the &quot; + number);
+        System.out.println(name + &quot; what is your last name ?&quot;);
+        last = in.readLine();
+        System.out.print(&quot;bye &quot; + name + &quot; &quot; + last);
+    }
+}
+</code></pre>
+<h3>continueexample.java</h3>
+<pre><code class="language-java">public class continueexample {
+    public static void main(String[] args) {
+        int x = 0, y;
+
+        while (x &lt; 10) {
+            x = x + 1;
+            System.out.println(&quot;X=&quot; + x);
+            y = 0;
+            while (y &lt; 10) {
+                y = y + 1;
+                if (y % 3 == 0)
+                    continue;
+                System.out.println(&quot;y=&quot; + y);
+                // this line skipped whenever y is evenly divisible by 3
+            }
+        }
+    }
+}
+</code></pre>
+<h3>copyarray.java</h3>
+<pre><code class="language-java">public class copyarray {
+
+    public static void main(String[] args) {
+        int[] smallprimes = { 2, 3, 5, 7, 9 };
+        int[] luckynumbers = { 1001, 1002, 1003, 1004, 1005, 1006 };
+        // copy smallprimes starting at position 2 to luckynumbers
+        // staring at position 1 for 3 elements.
+        System.arraycopy(smallprimes, 2, luckynumbers, 1, 3);
+        int i;
+        for (i = 0; i &lt; luckynumbers.length; i++) {
+            System.out.println(&quot;lucknumbers=[&quot; + i + &quot;]=&quot; + luckynumbers[i]);
+        }
+    }
+}
+</code></pre>
+<h3>doloop.java</h3>
+<pre><code class="language-java">import java.io.*;
+
+public class doloop {
+
+    public static void main(String[] args) {
+        int x;
+        x = 1;
+        do {
+            System.out.println(x * 5);
+            x = x + 1;
+        } while (x &lt; 10);
+    }
+}
+</code></pre>
+<h3>foreachloop.java</h3>
+<pre><code class="language-java">public class foreachloop {
+    public static void main(String[] args) {
+        int[] smallprimes = new int[3];
+        smallprimes[0] = 2;
+        smallprimes[1] = 3;
+        smallprimes[2] = 5;
+
+        // for each loop
+        for (int element : smallprimes) {
+            System.out.println(&quot;smallprimes=&quot; + element);
+        }
+    }
+}
+</code></pre>
+<h3>foreachmulti.java</h3>
+<pre><code class="language-java">public class foreachmulti {
+    public static void main(String[] args) {
+        int[][] magicsquare = { { 16, 3, 2, 13 }, { 5, 10, 11, 8 }, { 9, 6, 7, 12 }, { 4, 15, 14, 1 } };
+
+        for (int[] row : magicsquare) {
+            for (int element : row) {
+                System.out.print(element + &quot; &quot;);
+            }
+            System.out.println();
+        }
+    }
+}
+</code></pre>
+<h3>forloop.java</h3>
+<pre><code class="language-java">import java.io.*;
+
+public class forloop {
+
+    public static void main(String[] args) {
+        int x;
+        for (x = 1; x &lt; 10; x = x + 1) {
+            System.out.println(x * 5);
+        }
+    }
+}
+</code></pre>
+<h3>functionvoid.java</h3>
+<pre><code class="language-java">public class functionvoid {
+    public static void main(String[] args) {
+        int x, y;
+        add(3, 5);
+        x = 7;
+        y = 12;
+        add(x, y);
+    }
+
+    public static void add(int a, int b) {
+        int sum = a + b;
+        System.out.println(&quot;sum=&quot; + sum);
+    }
+}
+</code></pre>
+<h3>globalconstant.java</h3>
+<pre><code class="language-java">public class globalconstant {
+    public static void main(String[] args) {
+        double paperwidth = 8.5;
+        double paperheight = 11;
+        convert(paperwidth, paperheight);
+        convert(12, 14);
+    }
+
+    public static void convert(double w, double h) {
+        System.out.println(&quot;Paper size in cm= &quot; + w * CM_PER_INCH + &quot; by &quot; + h * CM_PER_INCH);
+    }
+
+    public static final double CM_PER_INCH = 2.54;
+}
+</code></pre>
+<h3>ifstatement.java</h3>
+<pre><code class="language-java">public class ifstatement {
+    public static void main(String[] args) {
+        int x = 1;
+        if (x &gt; 0) {
+            System.out.println(&quot;x is positive&quot;);
+        } else if (x &lt; 0) {
+            System.out.println(&quot;x is negative&quot;);
+        } else {
+            System.out.println(&quot;x is zero&quot;);
+        }
+    }
+}
+</code></pre>
+<h3>joptionpaneinput.java</h3>
+<pre><code class="language-java">import javax.swing.*;
+
+public class joptionpaneinput {
+    public static void main(String[] args) {
+        String name, last;
+        int number;
+        name = JOptionPane.showInputDialog(&quot;what is your name ?&quot;);
+        System.out.println(name + &quot; what day of the month is it today?&quot;);
+        number = Integer.parseInt(JOptionPane.showInputDialog(name + &quot; what day of the month is it today?&quot;));
+        number++;
+        System.out.println(name + &quot; you know that tomorrow it will be the &quot; + number);
+        last = JOptionPane.showInputDialog(name + &quot; what is your last name ?&quot;);
+        System.out.print(&quot;bye &quot; + name + &quot; &quot; + last);
+    }
+}
+</code></pre>
+<h3>localconstant.java</h3>
+<pre><code class="language-java">public class localconstant {
+    public static void main(String[] args) {
+        // local constant
+        final double CM_PER_INCH = 2.54;
+        double paperwidth = 8.5;
+        double paperheight = 11;
+        System.out.println(&quot;Paper size in cm= &quot; + paperwidth * CM_PER_INCH + &quot; by &quot; + paperheight * CM_PER_INCH);
+    }
+}
+</code></pre>
+<h3>logic.java</h3>
+<pre><code class="language-java">public class logic {
+    public static void main(String[] args) {
+        boolean x = false, y = true, z = true;
+        if (x == true &amp;&amp; y == true &amp;&amp; z == true) {
+            System.out.print(&quot; x, y and z are true&quot;);
+        }
+        if (x &amp;&amp; y &amp;&amp; z) {
+            System.out.println(&quot;x, y and z are true&quot;);
+        }
+        if (!x &amp;&amp; y &amp;&amp; z) {
+            System.out.println(&quot;x is false and y and z are true&quot;);
+        }
+        if (x || y || z) {
+            System.out.println(&quot;x or y or z is true&quot;);
+        }
+
+        double a = 1.75;
+        if (a &gt; 1.5 &amp;&amp; a &lt; 2.0) {
+            System.out.println(&quot; a is in the range 1.5 - 2.0&quot;);
+        }
+    }
+}
+</code></pre>
+<h3>mainargsarray.java</h3>
+<pre><code class="language-java">public class mainargsarray {
+    public static void main(String[] args) {
+        int i;
+        int length = args.length;
+        if (length == 0) {
+            System.out.println(&quot;no main arguments&quot;);
+        } else {
+            for (i = 0; i &lt; args.length; i++) {
+                System.out.println(&quot;args[&quot; + i + &quot;]=&quot; + args[i]);
+            }
+        }
+    }
+}
+</code></pre>
+<h3>mathoperatorsfunctions.java</h3>
+<pre><code class="language-java">public class mathoperatorsfunctions {
+    public static void main(String[] args) {
+        int x = 7, y = 2, z;
+        z = x % y;
+        System.out.println(&quot;remainder of 7/2=&quot; + z);
+
+        double a;
+        a = Math.pow(y, 3);
+        System.out.println(&quot;y to the power of 3 =&quot; + a);
+
+        double b;
+        b = Math.sqrt(16);
+        System.out.println(&quot;Square root of 16=&quot; + b);
+
+        double c;
+        c = Math.cos(Math.PI);
+        System.out.println(&quot;cos(3.1415927)=&quot; + c);
+    }
+}
+</code></pre>
+<h3>multidimensionalarray.java</h3>
+<pre><code class="language-java">public class mutidimensionalarray {
+    public static void main(String[] args) {
+        int[][] magicsquare = { { 16, 3, 2, 13 }, { 5, 10, 11, 8 }, { 9, 6, 7, 12 }, { 4, 15, 14, 1 } };
+        int row, col;
+        for (row = 0; row &lt; magicsquare.length; row++) {
+            for (col = 0; col &lt; magicsquare[row].length; col++) {
+                System.out.print(magicsquare[row][col] + &quot; &quot;);
+            }
+            System.out.println();
+        }
+    }
+}
+</code></pre>
+<h3>nesteddowhile.java</h3>
+<pre><code class="language-java">import java.io.*;
+
+public class nesteddowhile {
+    public static void main(String[] args) {
+        int row = 1, col;
+        do {
+            col = 1;
+            do {
+                System.out.print(row * col + &quot; &quot;);
+                col = col + 1;
+            } while (col &lt; 4);
+            row = row + 1;
+            System.out.println();
+        } while (row &lt; 5);
+    }
+}
+</code></pre>
+<h3>nestedfor.java</h3>
+<pre><code class="language-java">import java.io.*;
+
+public class nestedfor {
+    public static void main(String[] args) {
+        int row, col;
+        for (row = 1; row &lt; 5; row = row + 1) {
+            for (col = 1; col &lt; 4; col = col + 1) {
+                System.out.print(row * col + &quot; &quot;);
+            }
+            System.out.println();
+        }
+    }
+}
+</code></pre>
+<h3>nestedif.java</h3>
+<pre><code class="language-java">public class nestedif {
+    public static void main(String[] args) {
+        int x = 1, y = 2;
+        if (x &gt; 0) {
+            if (y &gt; 0) {
+                System.out.println(&quot;Both x and y are positive&quot;);
+            } else {
+                System.out.println(&quot;y is less than or equal to zero&quot;);
+            }
+        } else {
+            System.out.println(&quot;x is less than or equal to zero&quot;);
+        }
+    }
+}
+</code></pre>
+<h3>nestedswitchstatement.java</h3>
+<pre><code class="language-java">public class nestedswitchstatement {
+    public static void main(String[] args) {
+        int x = 1, y = 2;
+        switch (x) {
+        case 1:
+            switch (y) {
+            case 1:
+                System.out.println(&quot;x=1 and y=1&quot;);
+                break;
+            case 2:
+                System.out.println(&quot;x=1 and y=2&quot;);
+                break;
+            case 3:
+                System.out.println(&quot;x=1 and y=3&quot;);
+                break;
+            default:
+                System.out.println(&quot;x=1 and y is 0 or negative or &gt; 3&quot;);
+            }
+            break;
+        case 2:
+        case 3:
+        case 4:
+            System.out.println(&quot;x is two, three or four and y is not 1&quot;);
+            break;
+        default:
+            System.out.println(&quot;x is 0 or negative, or greater than 5 and y is not 1&quot;);
+        }
+    }
+}
+</code></pre>
+<h3>nestedwhile.java</h3>
+<pre><code class="language-java">import java.io.*;
+
+public class nestedwhile {
+    public static void main(String[] args) {
+        int row = 1, col;
+        while (row &lt; 5) {
+            col = 1;
+            while (col &lt; 4) {
+                System.out.print(row * col + &quot; &quot;);
+                col = col + 1;
+            }
+            row = row + 1;
+            System.out.println();
+        }
+    }
+}
+</code></pre>
+<h3>overloadedfunction.java</h3>
+<pre><code class="language-java">public class overloadedfunction {
+    public static void main(String[] args) {
+        int result;
+        int x = 3, y = 5;
+        result = add(x, y);
+        System.out.println(&quot;x+y=&quot; + result);
+        double a = 10.3, b = 2.4;
+        double answer = add(a, b);
+        System.out.println(&quot;a+b=&quot; + answer);
+        String word1 = &quot;hi&quot;, word2 = &quot;there&quot;;
+        String sentence = add(word1, word2);
+        System.out.println(&quot;sentence=&quot; + sentence);
+    }
+
+    public static int add(int a, int b) {
+        return a + b;
+    }
+
+    public static double add(double a, double b) {
+        return a + b;
+    }
+
+    public static String add(String a, String b) {
+        return a + b;
+    }
+}
+</code></pre>
+<h3>raggedarray.java</h3>
+<pre><code class="language-java">public class raggedarray {
+    public static void main(String[] args) {
+        int[][] ragged = new int[3][];
+        ragged[0] = new int[2];
+        ragged[0][0] = 2;
+        ragged[0][1] = 3;
+        ragged[1] = new int[] { 2, 3, 4 };
+        ragged[2] = new int[] { 3 };
+
+        int row, col;
+        for (row = 0; row &lt; ragged.length; row++) {
+            for (col = 0; col &lt; ragged[row].length; col++) {
+                System.out.print(ragged[row][col] + &quot; &quot;);
+            }
+            System.out.println();
+        }
+    }
+}
+</code></pre>
+<h3>randomnumber.java</h3>
+<pre><code class="language-java">public class randomnumber {
+    public static void main(String[] args) {
+
+        double number;
+        int times;
+        for (times = 1; times &lt;= 10; times = times + 1) {
+            number = Math.random();
+            System.out.println(number);
+        }
+    }
+}
+</code></pre>
+<h3>reinitializearray.java</h3>
+<pre><code class="language-java">public class reinitializearray {
+    public static void main(String[] args) {
+        int[] smallprimes = { 2, 3, 5, 7, 11, 13 };
+        int i;
+
+        for (i = 0; i &lt; smallprimes.length; i++) {
+            System.out.println(&quot;smallprimes[&quot; + i + &quot;]=&quot; + smallprimes[i]);
+        }
+
+        System.out.println(&quot;---------------------------------&quot;);
+
+        // reinitialize without creating a new array
+        smallprimes = new int[] { 17, 19, 23 };
+
+        for (i = 0; i &lt; smallprimes.length; i++) {
+            System.out.println(&quot;smallprimes[&quot; + i + &quot;]=&quot; + smallprimes[i]);
+        }
+    }
+}
+</code></pre>
+<h3>scannerinput.java</h3>
+<pre><code class="language-java">import java.util.*;
+
+public class scannerinput {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String name, last;
+        int number;
+        System.out.println(&quot;what is your name ?&quot;);
+        name = in.nextLine();
+        System.out.println(name + &quot; what day of the month is it today?&quot;);
+        number = Integer.parseInt(in.nextLine());
+        number++;
+        System.out.println(name + &quot; tomorrow it will be the  &quot; + number);
+    }
+}
+</code></pre>
+<h3>searcharray.java</h3>
+<pre><code class="language-java">import java.util.*;
+
+public class searcharray {
+    public static void main(String[] args) {
+        int[] numbers = { 12, 1, 4, 2 };
+        Arrays.sort(numbers);
+        int index = Arrays.binarySearch(numbers, 4);
+        int i;
+        for (i = 0; i &lt; numbers.length; i++) {
+            System.out.println(&quot;numbers[&quot; + i + &quot;]=&quot; + numbers[i]);
+        }
+        if (index &lt; 0) {
+            System.out.println(&quot;sorry no mathch&quot;);
+        } else {
+            System.out.println(&quot;match found at position &quot; + index);
+        }
+    }
+}
+</code></pre>
+<h3>stringtonumber.java</h3>
+<pre><code class="language-java">public class stringtonumber {
+
+    public static void main(String[] args) {
+        String a = &quot;105.45&quot;;
+        double x = Double.parseDouble(a);
+        String b = &quot;112&quot;;
+        int y = Integer.parseInt(b);
+        System.out.println(&quot;double x=&quot; + x);
+        System.out.println(&quot;int y=&quot; + y);
+
+        String c = String.valueOf(x);
+        System.out.println(&quot;string c=&quot; + c);
+        String d = String.valueOf(y);
+        System.out.println(&quot;string d=&quot; + d);
+
+    }
+}
+</code></pre>
+<h3>switchstatement.java</h3>
+<pre><code class="language-java">public class switchstatement {
+    public static void main(String[] args) {
+        int x = 3;
+        switch (x) {
+        case 1:
+            System.out.println(&quot;x is one&quot;);
+            break;
+        case 2:
+            System.out.println(&quot;x is two&quot;);
+            break;
+        case 3:
+        case 4:
+        case 5:
+            System.out.println(&quot;x is three, four or five&quot;);
+            break;
+        default:
+            System.out.println(&quot;x is 0 or negative, or greater than 5&quot;);
+        }
+    }
+}
+</code></pre>
+<h3>typecast.java</h3>
+<pre><code class="language-java">public class typecast {
+    public static void main(String[] args) {
+        double x = 10.5;
+        int y = (int) x;
+        System.out.println(&quot;x=&quot; + x);
+        System.out.println(&quot;y=&quot; + y);
+    }
+}
+</code></pre>
+<h3>types.java</h3>
+<pre><code class="language-java">public class types {
+    public static void main(String[] args) {
+        double a = 1.79e+308;
+        float b = 3.4e+38F;
+        int c = 2147483647;
+        long d = 9223372036854775807L;
+        short e = 32767;
+        byte f = 127;
+        String g = &quot;Sally&quot;;
+        System.out.println(&quot;a=&quot; + a);
+        System.out.println(&quot;b=&quot; + b);
+        System.out.println(&quot;c=&quot; + c);
+        System.out.println(&quot;d=&quot; + d);
+        System.out.println(&quot;e=&quot; + e);
+        System.out.println(&quot;f=&quot; + f);
+        System.out.println(&quot;g=&quot; + g);
+    }
+}
+</code></pre>
+<h3>whileloop.java</h3>
+<pre><code class="language-java">import java.io.*;
+
+public class whileloop {
+
+    public static void main(String[] args) {
+        int x;
+        x = 1;
+        while (x &lt; 10) {
+            System.out.println(x * 5);
+            x = x + 1;
+        }
+    }
+}
+</code></pre>
+
+    </div>
+
+    <script src="katex.min.js"></script>
+    <script src="highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>
