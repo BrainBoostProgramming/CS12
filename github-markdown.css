@@ -614,7 +614,7 @@
 .markdown-body pre>code {
   padding: 0;
   margin: 0;
-  font-size: 100%;
+  font-size: 110%;
   word-break: normal;
   white-space: pre;
   background: transparent;
@@ -636,7 +636,7 @@
   overflow: auto;
   font-size: 85%;
   line-height: 1.45;
-  background-color: #f6f8fa;
+  background-color: #1b1f23;
   border-radius: 3px;
 }
 
