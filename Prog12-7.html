@@ -48,6 +48,128 @@
     <div class="markdown-body main">
         <h1>Programming 12</h1>
 <h2>Assignment 7</h2>
+<p>Gonna do more GUI programming with JavaFX.</p>
+<p><a href="http://tutorials.jenkov.com/javafx/index.html">Have this open in another tab</a>.</p>
+<h3>Regular Setup</h3>
+<p>Here's a boilerplate you can use:</p>
+<pre><code class="language-java">import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.stage.Stage;
+
+public class MyFxApp extends Application {
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        primaryStage.setTitle(&quot;My First JavaFX App&quot;);
+
+        Label label = new Label(&quot;Hello World, JavaFX !&quot;);
+        Scene scene = new Scene(label, 400, 200);
+        primaryStage.setScene(scene);
+
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        Application.launch(args);
+    }
+}
+</code></pre>
+<h3>FXML Setup</h3>
+<p>These files should all be in the same folder/package.</p>
+<h4>Main.java</h4>
+<pre><code class="language-java">import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import java.net.URL;
+
+public class Main extends Application {
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        URL fxmlURL = Main.class.getResource(&quot;Main.fxml&quot;);
+
+        primaryStage.setTitle(&quot;ayyy lmao&quot;);
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(fxmlURL);
+        VBox vbox = loader.load();
+
+        Scene scene = new Scene(vbox);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        Application.launch(args);
+    }
+}
+</code></pre>
+<h4>ButtonHandler.java</h4>
+<pre><code class="language-java">import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
+
+public class ButtonHandler {
+    @FXML private Button secondButton;
+    public void handleButtonAction(ActionEvent event) {
+        System.out.println(&quot;aaaa&quot;);
+    }
+
+    public void betterButtonAction(ActionEvent actionEvent) {
+
+        Stage stage = (Stage)secondButton.getScene().getWindow();
+        stage.close();
+    }
+}
+</code></pre>
+<h4>Main.fxml</h4>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+
+&lt;?import javafx.scene.control.*?&gt;
+&lt;?import javafx.scene.layout.VBox?&gt;
+&lt;?import java.net.URL?&gt;
+&lt;VBox fx:controller=&quot;com.chris.ButtonHandler&quot; xmlns:fx=&quot;http://javafx.com/fxml&quot;&gt;
+    &lt;stylesheets&gt;
+        &lt;URL value=&quot;@Main.css&quot; /&gt;
+    &lt;/stylesheets&gt;
+    &lt;children&gt;
+        &lt;Label&gt;Hey&lt;/Label&gt;
+        &lt;Label&gt;What up&lt;/Label&gt;
+        &lt;Label&gt;aaaaaaaaaa&lt;/Label&gt;
+        &lt;Label&gt;In the beginning there was nothing.&lt;/Label&gt;
+        &lt;Button fx:id=&quot;coolbutton&quot; onAction=&quot;#handleButtonAction&quot;&gt;Click&lt;/Button&gt;
+        &lt;Button fx:id=&quot;secondButton&quot; onAction=&quot;#betterButtonAction&quot;&gt;Better&lt;/Button&gt;
+    &lt;/children&gt;
+&lt;/VBox&gt;
+</code></pre>
+<h4>Main.css</h4>
+<pre><code class="language-css">.root {
+    -fx-font: bold italic 20pt &quot;Arial&quot;;
+    -fx-font-size: 24px;
+    -fx-background-color: #ddd4da;
+    -fx-alignment: center;
+}
+
+.label {
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+}
+</code></pre>
+<h3>Assignment Problems</h3>
+<ol>
+<li>Create a program that consists of a 200x100 window with the title &quot;Test Frame 1&quot;.</li>
+<li>Create a program like the above but make it so the window grows larger over time.</li>
+<li>Create a JavaFX app with some content and style it using FXML.</li>
+<li>Create a JavaFX app with a button. The button doesn't need to do anything.</li>
+<li>Create a JavaFX app with a button inside a FlowPane. The button doesn't need to do anything.</li>
+<li>Create a JavaFX app with a button inside a FlowPane. When the button is clicked, change the background colour of the window.</li>
+<li>Create a JavaFX app with a button inside a FlowPane. When the button is clicked, quit the app.</li>
+<li>Create a JavaFX app with TWO buttons inside a FlowPane. One button will set the window background to red, the other to green.</li>
+<li>Create a JavaFX app with FOUR buttons inside a FlowPane. Make the buttons do whatever you want.</li>
+</ol>
 
     </div>
 
