@@ -49,6 +49,24 @@
         <h1>Programming 12</h1>
 <h2>Assignment 8</h2>
 <p>This assignment will deal with text input in JavaFX.</p>
+<p>For the HTML/JS part: The HTML file is like the FXML file in Java. All it does is define a layout/hierarchy. Actual logic goes into the JavaScript file. In the <code>&lt;head&gt;</code> tag of the HTML file we load the JS like so:</p>
+<pre><code class="language-html">&lt;script src=&quot;repeater.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p>The browser then runs the code in the JS file.</p>
+<p>We can assign ID's to HTML elements:</p>
+<pre><code class="language-html">&lt;p id=&quot;foo&quot;&gt;Blah&lt;/p&gt;
+</code></pre>
+<p>Then we can get and change that element in JS using the ID:</p>
+<pre><code class="language-js">let foo = document.getElementById('foo');
+</code></pre>
+<p>We can make use of various events using listeners:</p>
+<pre><code class="language-js">let foo = document.getElementById('foo');
+foo.onchange=changeEventHandler;
+
+function changeEventHandler(event) {
+    //do something
+}
+</code></pre>
 <h3>Assignment Problems</h3>
 <ol>
 <li>Create a JavaFX program that contains a <a href="http://tutorials.jenkov.com/javafx/label.html">Label</a> and a <a href="http://tutorials.jenkov.com/javafx/textfield.html">TextField</a>. The program doesn't need to do anything besides display those two controls.</li>
