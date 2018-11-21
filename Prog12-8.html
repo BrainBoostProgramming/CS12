@@ -54,17 +54,24 @@
 </code></pre>
 <p>The browser then runs the code in the JS file.</p>
 <p>We can assign ID's to HTML elements:</p>
-<pre><code class="language-html">&lt;p id=&quot;foo&quot;&gt;Blah&lt;/p&gt;
+<pre><code class="language-html">&lt;input id=&quot;foo&quot;&gt;&lt;/input&gt;
 </code></pre>
 <p>Then we can get and change that element in JS using the ID:</p>
 <pre><code class="language-js">let foo = document.getElementById('foo');
 </code></pre>
 <p>We can make use of various events using listeners:</p>
-<pre><code class="language-js">let foo = document.getElementById('foo');
-foo.onchange=changeEventHandler;
+<pre><code class="language-js">// Tells the browser to run the function 'ready' once the HTML is fully loaded.
+document.addEventListener('DOMContentLoaded', ready);
 
-function changeEventHandler(event) {
-    //do something
+function fooEventHandler(event) {
+    console.log('the foo element has received a new input event');
+}
+
+function ready() {
+    let foo = document.getElementById('foo');
+
+    // When the 'foo' element receives a new input, call the 'fooEventHandler' function.
+    foo.addEventListener('input', fooEventHandler);
 }
 </code></pre>
 <h3>Assignment Problems</h3>
